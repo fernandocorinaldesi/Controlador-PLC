@@ -8,7 +8,7 @@ Intentando hacer el ejercicio del plc.. de 3 diferentes tareas con manejo de exc
 * c#
 
 ### Screenshot
-en caso de no tener excepciones un resultado podria ser el siguiente
+En caso de no tener excepciones un resultado podria ser el siguiente
 
 * Valor;Coeficiente
 * 0-50;1
