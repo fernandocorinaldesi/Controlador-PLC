@@ -6,7 +6,7 @@ namespace Controlador_PLC
 {
     class ProcesadorDeListas
     {
-        public List<Archivo1> sumarFlags(List<Archivo1> listaoriginal)
+        public List<Archivo1> SumarFlags(List<Archivo1> listaoriginal)
         {
 
             List<Archivo1> listarepetidos = new List<Archivo1>();
@@ -17,7 +17,6 @@ namespace Controlador_PLC
                     if (listaoriginal[i].Codigo == listaoriginal[j].Codigo)
                     {
                         listarepetidos.Add(new Archivo1(listaoriginal[i].Codigo, listaoriginal[j].Flag + listaoriginal[i].Flag));
-                        // lista.RemoveAt(i);
                     }
 
                 }
@@ -46,7 +45,7 @@ namespace Controlador_PLC
             listaoriginal.AddRange(listarepetidos);
             return listaoriginal;
         }
-        public List<Archivo1> resolvercociente(List<Archivo2> listacocientes, List<Archivo1> listaflags)
+        public List<Archivo1> ResolverCociente(List<Archivo2> listacocientes, List<Archivo1> listaflags)
         {
 
             for (int i = 0; i < listaflags.Count; i++)
@@ -55,14 +54,14 @@ namespace Controlador_PLC
                 for (int j = 0; j < listacocientes.Count; j++)
                 {
 
-                    listaflags[i].Resultado = calculoCociente(listaflags[i].Flag, listacocientes);
+                    listaflags[i].Resultado = CalculoCociente(listaflags[i].Flag, listacocientes);
                 }
 
             }
             return listaflags;
         }
 
-        public double calculoCociente(double flags, List<Archivo2> listacocientes)
+        public double CalculoCociente(double flags, List<Archivo2> listacocientes)
         {
             double flagresult = 0;
             for (int i = 0; i < listacocientes.Count; i++)
@@ -78,8 +77,7 @@ namespace Controlador_PLC
                     {
                         flagresult = flags / listacocientes[i].Coeficiente;
                     }
-                   
-                                
+                                                   
                 }
             }
 
